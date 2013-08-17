@@ -412,9 +412,10 @@ textarea, input { outline: none; }
 	line-height:20px;
 }
 .full-width-features .span6 p{
-	font-size:13px;
+	font-size:18px;
 	color:#666;
 	line-height:21px;
+	text-align: left;
 }
 .full-width-features .features-wrap{
 	margin-bottom:50px;
