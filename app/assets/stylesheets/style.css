@@ -408,7 +408,7 @@ textarea, input { outline: none; }
 	margin-top:30px;
 }
 .full-width-features p{
-	font-size:13px;
+	font-size:17px;
 	line-height:20px;
 }
 .full-width-features .span6 p{
@@ -426,7 +426,7 @@ ul.tickList {
 	margin-top: 10px;
 }
 ul.tickList li {
-	background: url(tick.png) no-repeat;
+	background: url(tick3.png) no-repeat;
 	padding-left: 25px;
 	list-style-type: none;
 	padding-bottom: 5px;
