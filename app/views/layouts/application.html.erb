@@ -43,6 +43,9 @@
 <script type="text/javascript" src="/assets/theme.js"></script>  
 </head>
 <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+    <% end %>
 
 <%= yield %>
 

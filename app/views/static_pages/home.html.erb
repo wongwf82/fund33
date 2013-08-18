@@ -41,19 +41,39 @@
 						<br class="hidden-phone">
 						<h1>The crowdfunded product accelerator</h1>
 						<h4>Build your idea through a single pledge</h4>
-						<form action="#" method="post" id="subForm" class="theme-form sign-up-form">
-							<input type="email" name="email" id="email" class="email required" value="" title="">
-							<input type="submit" value="REGISTER!">
-						</form>
+					    <%= form_for @user, :html => {:class => "theme-form sign-up-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
+						  <% if @user.errors.any? %>
+							  <div id="error_explanation">
+							    <ul>
+							    <% @user.errors.full_messages.each do |msg| %>
+							      <li>* <%= msg %></li>
+							    <% end %>
+							    </ul>
+							  </div>
+							<% end %>
+	  						<%= f.text_field :email %>
+					      <%= f.submit "REGISTER!"%>    
+					    <% end %>						
 					</div>
 					
 					<div class="header-main-phone visible-phone">
 						<h1>The crowdfunded product accelerator</h1>
 						<h4>Build your idea through a single pledge</h4>
-						<form action="#" method="post" id="subForm" class="theme-form sign-up-form">
+
+					    <%= form_for @user, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
+						  <% if @user.errors.any? %>
+							  <div id="error_explanation">
+							    <ul>
+							    <% @user.errors.full_messages.each do |msg| %>
+							      <li>* <%= msg %></li>
+							    <% end %>
+							    </ul>
+							  </div>
+							<% end %>
+						    <input type="hidden" name="name" value="">
 							<input type="email" name="email" id="email" class="email required" value="" title="Your email address">
-							<input type="submit" value="REGISTER!">
-						</form>
+					      <%= f.submit "REGISTER!"%>    
+					    <% end %>
 					</div>
 				</div>
 			</div>
@@ -76,28 +96,28 @@
 			</div>
 			<div class="row">
 				<div class="span3">
-					<img src="assets/feature01.png" alt="">
+					<img src="assets/process-idea.png" alt="">
 					<h3>Idea</h3>
 					<p>
 						Create and submit a pitch deck of your unique idea.
 					</p>
 				</div>
 				<div class="span3">
-					<img src="assets/pledge.png" alt="">
+					<img src="assets/process-pledge.png" alt="">
 					<h3>Pledge</h3>
 					<p>
 						Pledge the required dollar amount.
 					</p>
 				</div>
 				<div class="span3">
-					<img src="assets/feature03.png" alt="">
+					<img src="assets/process-selection.png" alt="">
 					<h3>Selection</h3>
 					<p>
 						Our team reviews all submissions and selects the most innovative idea.
 					</p>
 				</div>
 				<div class="span3">
-					<img src="assets/feature04.png" alt="">
+					<img src="assets/process-build.png" alt="">
 					<h3>Build</h3>
 					<p>
 						Selected winners will have their ideas fully developed with mentorship!						
@@ -220,25 +240,19 @@
 
 <!-- TEAM SECTION
 ================================================== -->
+
 				<div class="span12">
-					<h1>MEET THE TEAM</h1>
-					<h2>We are a team of two,<br>with the passion of hundreds.</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span12">
-					<hr>
-					<br>
+					<h1>MEET THE FOUNDERS</h1><br/><br/>
 				</div>
 				<div class="span6">
-					<img src="assets/fai.png" alt="">
+					<img src="assets/fai.png" alt="Fai Wong">
 					<h3>Fai Wong, CEO</h3>
 					<p>
 					Fai is the development mastermind behind Fund33. With a strong career in programming and entrepreneurship, he has led several successful start-ups around the globe. Fai has the uncanny ability to make any vision come to life. No project is too large for him and he values products that disrupt existing technology. Fai is actively involved with various accelerator programs and holds a Bachelor of Computing (Software Engineering major) from Monash University.				
 					</p>
 				</div>
 				<div class="span6">
-					<img src="assets/team02.jpg" alt="">
+					<img src="assets/eric.png" alt="Eric Fung">
 					<h3>Eric Fung, COO</h3>
 					<p>
 					Eric steers the company’s growth strategy and brand. From handling operations to marketing, his battery never runs out of power.  Prior to Fund33, Eric spent his career working in both start-ups and Fortune 500 companies.  Some recent companies include EMC² and ERPLY. Eric has a passion for helping entrepreneurs and volunteering for his community.  He graduated with a degree in Advertising and Public Relations from the Pennsylvania State University.
