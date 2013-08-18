@@ -1,12 +1,5 @@
-default: &default
-  MAIL_SERVER: smtp.gmail.com
-  MAIL_SERVER_PORT: 587
-  MAIL_DOMAIN: gmail.com
-  MAIL_USERNAME: wongwf82biz
-  MAIL_PASSWORD: qwerty82
-
-development:
-  <<: *default
-
-production:
-  <<: *default
+MAIL_SERVER: smtp.sendgrid.net
+MAIL_SERVER_PORT: 587
+MAIL_DOMAIN: heroku.com
+MAIL_USERNAME: app13671391@heroku.com
+MAIL_PASSWORD: 84qn3wqf
