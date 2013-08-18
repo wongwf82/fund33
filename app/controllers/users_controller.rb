@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     UserMailer.registration_confirmation(@user).deliver
-    flash[:success] = "Thank you! We will send you an invite when the crowdfunding campaign kicks off!"
+    flash[:success] = "Thank you! We will send you an invite when the crowdfunding campaign kicks off."
     redirect_to root_url
 
 #    respond_to do |format|

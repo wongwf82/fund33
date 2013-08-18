@@ -23,10 +23,9 @@
 			<div class="row">
 				<div class="span12">
 					<div class="top-nav">
-
-      <span class="pull-left logo">
-        <%= link_to image_tag("logo.png", :alt => "Fund33 home", :title => "Fund33 home"), root_path %>
-      </span>
+				        <span class="pull-left logo">
+				            <%= link_to image_tag("logo.png", :alt => "Fund33 home", :title => "Fund33 home"), root_path %>
+				        </span>
 						<ul class="nav hidden-phone">
 							<li>
 								<a href="#contact" class="contact-link">CONTACT</a>
@@ -51,7 +50,7 @@
 							    </ul>
 							  </div>
 							<% end %>
-	  						<%= f.text_field :email %>
+	  						<%= f.text_field :email, :id => 'user-email' %>
 					      <%= f.submit "REGISTER!"%>    
 					    <% end %>						
 					</div>
@@ -59,8 +58,7 @@
 					<div class="header-main-phone visible-phone">
 						<h1>The crowdfunded product accelerator</h1>
 						<h4>Build your idea through a single pledge</h4>
-
-					    <%= form_for @user, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
+					    <%= form_for @user, :html => {:class => "theme-form sign-up-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
 						  <% if @user.errors.any? %>
 							  <div id="error_explanation">
 							    <ul>
@@ -70,10 +68,9 @@
 							    </ul>
 							  </div>
 							<% end %>
-						    <input type="hidden" name="name" value="">
-							<input type="email" name="email" id="email" class="email required" value="" title="Your email address">
+	  						<%= f.text_field :email %>
 					      <%= f.submit "REGISTER!"%>    
-					    <% end %>
+					    <% end %>		
 					</div>
 				</div>
 			</div>
@@ -284,27 +281,34 @@
            	<div class="map"><iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?ie=UTF8&amp;q=las+tablas,+madrid&amp;fb=1&amp;hq=las+tablas,&amp;hnear=0xd42287d383766c9:0xad469cc0ed50997d,Madrid,+Espa%C3%B1a&amp;cid=0,0,15011046097507982567&amp;t=m&amp;iwloc=A&amp;ll=37.786521,-122.407075&amp;spn=0.006295,0.006295&amp;output=embed"></iframe></div>
 			<br>
 			</div>
-			<form action="" method="post" class="theme-form">
+
+	        <%= form_for @user, :html => {:class => "theme-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
+				<% if @user.errors.any? %>
+					<div id="error_explanation">
+						<ul>
+							<% @user.errors.full_messages.each do |msg| %>
+				                <li>* <%= msg %></li>
+			    		    <% end %>
+					    </ul>
+			    	</div>
+				<% end %>
 				<div class="span3">
-					<input type="text" name="namefield"  title="Name" class="required" id="name-field">
+	  		    	<%= f.text_field :name, :id => "name-field", :title => "Name" %>
 				</div>	
 				<div class="span3">
-					<input type="email" name="emailfield" title="Email" class="email required" id="email-field">
-				</div>
+	  		    	<%= f.text_field :email, :id => "email-field", :title => "Email" %>
+				</div>	
 				<div class="span3">
-					<input type="text" name="phonefield" title="Phone" id="phone-field">
-				</div>
+	  		    	<%= f.text_field :phone, :id => "phone-field", :title => "Phone" %>
+				</div>	
 				<div class="span3">
-					<input type="text" name="companyfield" title="Company" id="company-field">
-				</div>
+	  		    	<%= f.text_field :company, :id => "company-field", :title => "Company" %>
+				</div>	
 				<div class="span12  comments-textarea">
-					<textarea name="commentsfield" title="" id="comments-field"></textarea>
-				</div>
-				<div class="span4 offset4">
-					<input type="hidden" name="say" value="hello">
-					<input type="submit" value="SUBMIT!">
-				</div>
-			</form>
+	  		    	<%= f.text_area :comments, :id => "comments-field", :title => "" %>
+				</div>	
+			    <%= f.submit "SUBMIT!"%> 
+			<% end %> 
 		</div>
 	</div>
 	<div class="container">
