@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	
-	
 	$('a[href*=#]').click(function() {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
 	    && location.hostname == this.hostname) {
@@ -28,7 +27,13 @@ $(document).ready(function() {
 	$('#url').watermark();
 	$('#comment').watermark();
 
-	
+	$('.applicant-form #first-name').watermark();
+	$('.applicant-form #last-name').watermark();
+	$('.applicant-form #city').watermark();
+	$('.applicant-form #phone').watermark();
+	$('.applicant-form #email').watermark();
+	$('.applicant-form #position').watermark();
+
 	//Form Validation
 	$(".theme-form").each(function() {
 		$(this).validate();
@@ -37,6 +42,11 @@ $(document).ready(function() {
 	// Display Contact Form
 	$(".contact-link").click(function(){
 		$(".contact-form").show();
+		return false;
+	})
+	
+	$(".job-link").click(function(){
+		$(".job-form").show();
 		return false;
 	})
 	

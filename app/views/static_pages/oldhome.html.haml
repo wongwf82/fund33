@@ -1,0 +1,256 @@
+.page-wrapper
+  .agency-wrap
+    .container.page-container.home-container
+      .row
+        .span12
+          = render 'layouts/top_menu'
+          /
+            TOP PAGE DISPLAY
+            \==================================================
+          .header-main.hidden-phone
+            %h1 &nbsp;
+            %br.hidden-phone/
+            %h1 The crowdfunded product accelerator
+            %h4 Build your idea through a single pledge
+            = form_for @user, :html => {:class => "theme-form sign-up-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f|
+              - if @user.errors.any?
+                #error_explanation
+                  %ul
+                    - @user.errors.full_messages.each do |msg|
+                      %li
+                        * #{msg}
+              = f.text_field :email, :id => 'user-email'
+              = f.submit "REGISTER!"
+          .header-main-phone.visible-phone
+            %h1 The crowdfunded product accelerator
+            %h4 Build your idea through a single pledge
+            = form_for @user, :html => {:class => "theme-form sign-up-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f|
+              - if @user.errors.any?
+                #error_explanation
+                  %ul
+                    - @user.errors.full_messages.each do |msg|
+                      %li
+                        * #{msg}
+              = f.text_field :email
+              = f.submit "REGISTER!"
+  %a.down-tab.hidden-phone{:href => "#feature-set", :name => "feature-set"}
+    LEARN MORE
+    %i.arrow.arrow-down &nbsp;
+  .full-width-features.feature-1
+    .container
+      .row
+        /
+          SERVICES SECTION
+          \==================================================
+        .span12
+          %h1 WHAT IS FUND33?
+          %h2{:style => "text-align: left;"}
+            %b Have a unique idea?
+            Fund33 is a crowdfunding platform that provides a chance for products to be built through a single pledge. Simply put, we help entrepreneurs bring their ideas to life! Through a selection process, the winning entrepreneur will have their idea built out in exchange for basic equity. All selected will receive mentorship for future growth.
+      .row
+        .span3
+          %img{:alt => "", :src => "assets/process-idea.png"}/
+          %h3 Idea
+          %p
+            Create and submit a pitch deck of your unique idea.
+        .span3
+          %img{:alt => "", :src => "assets/process-pledge.png"}/
+          %h3 Pledge
+          %p
+            Pledge the required dollar amount.
+        .span3
+          %img{:alt => "", :src => "assets/process-selection.png"}/
+          %h3 Selection
+          %p
+            When a project is fully funded, our team will review all submissions and select the most innovative idea.
+        .span3
+          %img{:alt => "", :src => "assets/process-build.png"}/
+          %h3 Build
+          %p
+            Selected winners will have their ideas fully developed with mentorship!
+  .full-width-features.feature-2
+    .container
+      .row
+        /
+          PRICES TABLE
+          \==================================================
+        .span12
+          %h1 OUR FOCUS
+          %h2{:style => "text-align: left;"}
+            Fund33 was founded on a simple yet, powerful idea: Empowering the next wave of entrepreneurs through development and mentorship.  Our team is made up of individuals with years of start-up experience and we love to work with people who want to disrupt the tech scene.  With that said, we do have a basic set of criteria that we use to judge and select our winners:
+          %ul.tickList
+            %li Creativity of the idea
+            %li Entrepreneur’s professional background
+            %li Business model
+            %li Market potential
+        .span12
+          %hr/
+          %br/
+        .span12
+          %h1 FUND33 START-UP PACKAGE
+          %h2 Whether you get selected or not, your pledge won’t go to waste! All pledgers will receive a Fund33 Start-up Package. The package will include some awesome schwag and services from us and our supporting partners!
+      /
+        <div class="row">
+        <div class="span12">
+        </div>
+        <div class="span12">
+        <div class="pricing-table-wrapper">
+        <div class="pricing-table row-fluid">
+        <ul class="pricing-column span2">
+        <li class="pricing-title">Beginner</li>
+        
+        <li class="pricing-price">$20 <span>/month</span>
+        </li>
+        
+        <li>Yes</li>
+        <li>Yes</li>
+        <li>Yes</li>
+        <li>No</li>
+        <li>No</li>
+        
+        <li class="pricing-button">
+        <a class="button" href="#">Sign Up</a>
+        </li>
+        </ul>
+        
+        <ul class="pricing-column span2">
+        <li class="pricing-title">Beginner</li>
+        
+        <li class="pricing-price">$20 <span>/month</span>
+        </li>
+        
+        <li>5,000MB Storage</li>
+        <li>1TB Bandwidth</li>
+        <li>Technical support</li>
+        <li>cPanel &amp;amp; MySQL</li>
+        <li>99% uptime</li>
+        
+        <li class="pricing-button">
+        <a class="button" href="#">Sign Up</a>
+        </li>
+        </ul>
+        
+        <ul class="pricing-column span3">
+        <li class="pricing-title">Special Offer!</li>
+        
+        <li class="pricing-price">$50 <span>/month</span>
+        </li>
+        
+        <li>50,000MB Storage</li>
+        <li>5TB Bandwidth</li>
+        <li>Technical support</li>
+        <li>cPanel &amp;amp; MySQL</li>
+        <li>100% uptime</li>
+        
+        <li class="pricing-button">
+        <a class="button" href="#">Sign Up</a>
+        </li>
+        </ul>
+        
+        <ul class="pricing-column span5">
+        <li class="pricing-title">Special Offer!</li>
+        
+        <li class="pricing-price">$100 <span>/month</span>
+        </li>
+        
+        <li>Unlimited Storage</li>
+        <li>Unlimited Bandwidth</li>
+        <li>Technical support</li>
+        <li>cPanel &amp;amp; MySQL</li>
+        <li>100% uptime</li>
+        
+        <li class="pricing-button">
+        <a class="button" href="#">Sign Up</a>
+        </li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+  .full-width-features.feature-3
+    .container
+      .row
+        .span12
+          %h1 MEET THE FOUNDERS
+          %br/
+          %br/
+        .span6
+          %img{:alt => "Fai Wong", :src => "assets/fai.png"}/
+          %h3 Fai Wong, CEO
+          %p
+            Fai is the development mastermind behind Fund33. With a strong career in programming and entrepreneurship, he has led several successful start-ups around the globe. Fai has the uncanny ability to make any vision come to life. No project is too large for him and he values products that disrupt existing technology. Fai is actively involved with various accelerator programs and holds a Bachelor of Computing (Software Engineering major) from Monash University.
+        .span6
+          %img{:alt => "Eric Fung", :src => "assets/eric.png"}/
+          %h3 Eric Fung, COO
+          %p
+            Eric steers the company’s growth strategy and brand. From handling operations to marketing, his battery never runs out of power.  Prior to Fund33, Eric spent his career working in both start-ups and Fortune 500 companies.  Some recent companies include EMC² and ERPLY. Eric has a passion for helping entrepreneurs and volunteering for his community.  He graduated with a degree in Advertising and Public Relations from the Pennsylvania State University.
+  /
+    BOTTOM SECTION
+    \==================================================
+  .container.call-to-action
+    %h1
+      WE'RE
+      %br.visible-phone/
+      COMING
+      %br.visible-phone/
+      SOON
+    %a.scroll-top{:href => "#top"} REGISTER!
+  .end_page
+    %img{:alt => "logo", :src => "assets/33.png"}/
+  /
+    CONTACT FORM &amp; MAP
+    \==================================================
+  .footer{:name => "contact"}
+    .container.contact-form
+      .row
+        .span12
+          %br/
+          %br/
+          %h3 Contact Us
+          .map
+            %iframe{:frameborder => "0", :height => "250", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :src => "https://maps.google.com/maps?ie=UTF8&amp;q=las+tablas,+madrid&amp;fb=1&amp;hq=las+tablas,&amp;hnear=0xd42287d383766c9:0xad469cc0ed50997d,Madrid,+Espa%C3%B1a&amp;cid=0,0,15011046097507982567&amp;t=m&amp;iwloc=A&amp;ll=37.786521,-122.407075&amp;spn=0.006295,0.006295&amp;output=embed", :width => "100%"}
+          %br/
+        = form_for @user, :html => {:class => "theme-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f|
+          - if @user.errors.any?
+            #error_explanation
+              %ul
+                - @user.errors.full_messages.each do |msg|
+                  %li
+                    * #{msg}
+          .span3
+            = f.text_field :name, :id => "name-field", :title => "Name"
+          .span3
+            = f.text_field :email, :id => "email-field", :title => "Email"
+          .span3
+            = f.text_field :phone, :id => "phone-field", :title => "Phone"
+          .span3
+            = f.text_field :company, :id => "company-field", :title => "Company"
+          .span12.comments-textarea
+            = f.text_area :comments, :id => "comments-field", :title => ""
+          = f.submit "SUBMIT!"
+    .job-form.full-width-features.feature-2{:name => "job"}
+      .container
+        .row
+          .span12
+            %br/
+            %br/
+            %h1 CAREERS
+            %h2{:style => "text-align: left;"}
+              Interested in joining us? We’re always looking for bright and entrepreneurial-minded people.  The best candidates are game changers, not followers!  If this sounds like you, drop us a line.Below are our current openings:
+          .span12
+            %hr/
+            %br/
+          .span12
+            %h1 Global Expansion Internship Program (remote):
+            %h2{:style => "text-align: left;"}
+              We’re looking for talented individuals to intern and grow with us.  Fund33 interns are key players with the opportunity to make big contributions.
+            %ul.tickList
+              %li Current college student (USA or international)
+              %li Interest in start-ups
+              %li Completion of relevant course work and/or experience
+              %li Ability to work 5-10 hours a week
+              %li Driven and a self-starter
+              %li Knowledge of social media, microsoft office and basic computer functions
+              %li Reading &amp; writing of a second language a plus!
+            %a.action-button{:href => "/applicants"} APPLY!
+    = render 'layouts/footer'

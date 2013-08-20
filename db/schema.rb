@@ -11,7 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130818053548) do
+ActiveRecord::Schema.define(:version => 20130820090932) do
+
+  create_table "applicants", :force => true do |t|
+    t.string   "resume"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "cv_file_name"
+    t.string   "cv_content_type"
+    t.integer  "cv_file_size"
+    t.datetime "cv_updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "position"
+  end
+
+  create_table "countries", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "iso"
+    t.string   "name"
+  end
+
+  create_table "states", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "iso"
+    t.string   "name"
+    t.integer  "country_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

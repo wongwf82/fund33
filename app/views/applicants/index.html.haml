@@ -1,0 +1,38 @@
+
+.full-width-features.feature-1
+  .container.contact-form.applicant-form
+    .row
+      .span12
+        %br/
+        %br/
+        %h1 
+          = "Application for " << (params[:position] ||= '')
+        %br/
+        %br/
+        = form_for @applicant, :url => { :action => :create, :position => (params[:position] ||= '') }, :html => {:class => "theme-form", :multipart => true } do | f |
+          .row
+            .span3
+              = f.text_field :first_name, :id => "first-name", :title => "First name"
+            .span3
+              = f.text_field :last_name, :id => "last-name", :title => "Last name"
+            .span3
+              = f.text_field :city, :id => "city", :title => "City"
+            .span3
+              %h2{:style => "text-align: left;"}
+                = country_code_select(:applicant, :country,
+                          priority_countries=['US','GB'],
+                          {:include_blank=>true},
+                          {:style=>'color: #7f7f7f; font-size: 17px; font-family: "PT Sans", Helvetica, Arial, sans-serif;'})           
+          %br/
+          %br/
+          .row
+            .span3
+              = f.text_field :phone, :id => "phone", :title => "Phone"
+            .span3
+              = f.text_field :email, :id => "email", :title => "Email"
+            .span3
+              %h2{:style => "text-align: left;"}
+                Upload resume: #{f.file_field :cv}
+
+          = f.hidden_field :position, :id => "position", :title => "Position", :value => (params[:position] ||= '')
+          \#{f.submit "SUBMIT!", :class => 'action-button'}

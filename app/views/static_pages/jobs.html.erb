@@ -3,45 +3,9 @@
 		<div class="container page-container home-container">
 			<div class="row">
 				<div class="span12">
-					<%= render 'layouts/top_menu' %>
+    				<%= render 'layouts/top_menu' %>
 
-					<div class="header-main hidden-phone">
-						<h1>&nbsp;</h1>
-						<br class="hidden-phone">
-						<h1>The crowdfunded product accelerator</h1>
-						<h4>Build your idea through a single pledge</h4>
-						<%= form_for @user, :html => {:class => "theme-form sign-up-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
-						<% if @user.errors.any? %>
-						<div id="error_explanation">
-							<ul>
-								<% @user.errors.full_messages.each do |msg| %>
-								<li>* <%= msg %></li>
-								<% end %>
-							</ul>
-						</div>
-						<% end %>
-						<%= f.text_field :email, :id => 'user-email' %>
-						<%= f.submit "REGISTER!"%>    
-						<% end %>						
-					</div>
-
-					<div class="header-main-phone visible-phone">
-						<h1>The crowdfunded product accelerator</h1>
-						<h4>Build your idea through a single pledge</h4>
-						<%= form_for @user, :html => {:class => "theme-form sign-up-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
-						<% if @user.errors.any? %>
-						<div id="error_explanation">
-							<ul>
-								<% @user.errors.full_messages.each do |msg| %>
-								<li>* <%= msg %></li>
-								<% end %>
-							</ul>
-						</div>
-						<% end %>
-						<%= f.text_field :email %>
-						<%= f.submit "REGISTER!"%>    
-						<% end %>		
-					</div>
+TEST
 				</div>
 			</div>
 		</div>
@@ -52,7 +16,9 @@
 	<div class="full-width-features feature-1">
 		<div class="container">
 			<div class="row">
-				
+			
+<!-- SERVICES SECTION
+================================================== -->
 				<div class="span12">
 					<h1>WHAT IS FUND33?</h1>
 					<h2 style="text-align: left;"><b>Have a unique idea?</b> Fund33 is a crowdfunding platform that provides a chance for products to be built through a single pledge. Simply put, we help entrepreneurs bring their ideas to life! Through a selection process, the winning entrepreneur will have their idea built out in exchange for basic equity. All selected will receive mentorship for future growth.
@@ -94,6 +60,9 @@
 	<div class="full-width-features feature-2">
 		<div class="container">
 			<div class="row">
+
+<!-- PRICES TABLE
+================================================== -->
 
 				<div class="span12">
 					<h1>OUR FOCUS</h1>
@@ -194,113 +163,49 @@
         		</div>
 			</div>
 		-->
-	</div>
-</div>
-<div class="full-width-features feature-3">
-	<div class="container">
-		<div class="row">
-			<div class="span12">
-				<h1>MEET THE FOUNDERS</h1><br/><br/>
-			</div>
-			<div class="span6">
-				<img src="assets/fai.png" alt="Fai Wong">
-				<h3>Fai Wong, CEO</h3>
-				<p>
-					Fai is the development mastermind behind Fund33. With a strong career in programming and entrepreneurship, he has led several successful start-ups around the globe. Fai has the uncanny ability to make any vision come to life. No project is too large for him and he values products that disrupt existing technology. Fai is actively involved with various accelerator programs and holds a Bachelor of Computing (Software Engineering major) from Monash University.				
-				</p>
-			</div>
-			<div class="span6">
-				<img src="assets/eric.png" alt="Eric Fung">
-				<h3>Eric Fung, COO</h3>
-				<p>
-					Eric steers the company’s growth strategy and brand. From handling operations to marketing, his battery never runs out of power.  Prior to Fund33, Eric spent his career working in both start-ups and Fortune 500 companies.  Some recent companies include EMC² and ERPLY. Eric has a passion for helping entrepreneurs and volunteering for his community.  He graduated with a degree in Advertising and Public Relations from the Pennsylvania State University.
-				</p>
-			</div>
 		</div>
 	</div>
-</div>
-
-<div class="container call-to-action">
-	<h1>WE'RE <br class="visible-phone"> COMING <br class="visible-phone"> SOON</h1>
-	<a href="#top" class="scroll-top">REGISTER!</a>
-</div>
-<div class="end_page">
-	<img src="assets/33.png" alt="logo">
-</div>
-
-<div class="footer" name="contact">
-	<div class="container contact-form">
-		<div class="row">
-			<div class="span12">
-				<br>
-				<br>
-				<h3>Contact Us</h3>
-				<div class="map"><iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?ie=UTF8&amp;q=las+tablas,+madrid&amp;fb=1&amp;hq=las+tablas,&amp;hnear=0xd42287d383766c9:0xad469cc0ed50997d,Madrid,+Espa%C3%B1a&amp;cid=0,0,15011046097507982567&amp;t=m&amp;iwloc=A&amp;ll=37.786521,-122.407075&amp;spn=0.006295,0.006295&amp;output=embed"></iframe></div>
-				<br>
-			</div>
-
-			<%= form_for @user, :html => {:class => "theme-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
-			<% if @user.errors.any? %>
-			<div id="error_explanation">
-				<ul>
-					<% @user.errors.full_messages.each do |msg| %>
-					<li>* <%= msg %></li>
-					<% end %>
-				</ul>
-			</div>
-			<% end %>
-			<div class="span3">
-				<%= f.text_field :name, :id => "name-field", :title => "Name" %>
-			</div>	
-			<div class="span3">
-				<%= f.text_field :email, :id => "email-field", :title => "Email" %>
-			</div>	
-			<div class="span3">
-				<%= f.text_field :phone, :id => "phone-field", :title => "Phone" %>
-			</div>	
-			<div class="span3">
-				<%= f.text_field :company, :id => "company-field", :title => "Company" %>
-			</div>	
-			<div class="span12  comments-textarea">
-				<%= f.text_area :comments, :id => "comments-field", :title => "" %>
-			</div>	
-			<%= f.submit "SUBMIT!"%> 
-			<% end %> 
-		</div>
-	</div>
-
-	<div class="job-form full-width-features feature-2" name="job">
+	<div class="full-width-features feature-3">
 		<div class="container">
 			<div class="row">
-				<div class="span12">
-					<br/><br/>
-					<h1>CAREERS</h1>
-					<h2 style="text-align: left;">Interested in joining us? We’re always looking for bright and entrepreneurial-minded people.  The best candidates are game changers, not followers!  If this sounds like you, drop us a line.Below are our current openings:
-					</h2>
-				</div>
+
+<!-- TEAM SECTION
+================================================== -->
 
 				<div class="span12">
-					<hr>
-					<br>
+					<h1>MEET THE FOUNDERS</h1><br/><br/>
 				</div>
-				<div class="span12">
-					<h1>Global Expansion Internship Program (remote)</h1>
-					<h2 style="text-align: left;">We’re looking for talented individuals to intern and grow with us.  Fund33 interns are key players with the opportunity to make big contributions.
-						<ul class="tickList">
-							<li>Current college student (USA or international)</li>
-							<li>Interest in start-ups</li>
-							<li>Completion of relevant course work and/or experience</li>
-							<li>Ability to work 5-10 hours a week</li>
-							<li>Driven and a self-starter</li>
-							<li>Knowledge of social media, microsoft office and basic computer functions</li>
-							<li>Reading &amp; writing of a second language a plus!</li>
-						</ul>
-					</h2>
-					<%= link_to "APPLY!", applicants_path(:position => "Global Expansion Internship Program (remote)"), :class => "action-button" %>
+				<div class="span6">
+					<img src="assets/fai.png" alt="Fai Wong">
+					<h3>Fai Wong, CEO</h3>
+					<p>
+					Fai is the development mastermind behind Fund33. With a strong career in programming and entrepreneurship, he has led several successful start-ups around the globe. Fai has the uncanny ability to make any vision come to life. No project is too large for him and he values products that disrupt existing technology. Fai is actively involved with various accelerator programs and holds a Bachelor of Computing (Software Engineering major) from Monash University.				
+					</p>
+				</div>
+				<div class="span6">
+					<img src="assets/eric.png" alt="Eric Fung">
+					<h3>Eric Fung, COO</h3>
+					<p>
+					Eric steers the company’s growth strategy and brand. From handling operations to marketing, his battery never runs out of power.  Prior to Fund33, Eric spent his career working in both start-ups and Fortune 500 companies.  Some recent companies include EMC² and ERPLY. Eric has a passion for helping entrepreneurs and volunteering for his community.  He graduated with a degree in Advertising and Public Relations from the Pennsylvania State University.
+					</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<%= render 'layouts/footer' %>		
-</div>
+
+<!-- BOTTOM SECTION
+================================================== -->
+	<div class="container call-to-action">
+		<h1>WE'RE <br class="visible-phone"> COMING <br class="visible-phone"> SOON</h1>
+		<a href="#top" class="scroll-top">REGISTER!</a>
+	</div>
+	<div class="end_page">
+		<img src="assets/33.png" alt="logo">
+	</div>
+
+<!-- CONTACT FORM & MAP
+================================================== -->
+	<div class="footer" name="contact">
+    	<%= render 'layouts/footer' %>		
+	</div>
 </div>

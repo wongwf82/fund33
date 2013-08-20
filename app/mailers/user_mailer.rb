@@ -1,11 +1,17 @@
 class UserMailer < ActionMailer::Base
   default :from => "fai@memberpass.com"
+  default :to => 'thefund33@gmail.com'
 
   def registration_confirmation(user)
   	@user = user
-  	
-    subject = 'Registration from Fund33.com'
-  	mail(:to => 'wongwf82@gmail.com', :subject => subject)  	
-#  	mail(:to => user.email, :subject => 'Expression of interest from MemberPass.com - Landing Page v1')
+  	mail(:subject => 'Registration from Fund33.com')  	
   end
+
+  def applicant_resume(applicant)
+  	@applicant = applicant
+  	@applicant.save
+    attachments[@applicant.cv_file_name] = File.read('public/system/attachments/' << @applicant.cv_file_name)
+  	mail(:subject => 'Job Application from Fund33.com')  
+  end
+
 end

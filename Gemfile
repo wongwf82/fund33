@@ -3,12 +3,18 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 #gem 'bootstrap-sass', '2.1'
 gem 'jquery-rails'
+gem 'paperclip', '~> 3.0'
+gem 'seedbank', github: 'james2m/seedbank'
+gem 'haml-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
   gem 'sqlite3', '1.3.5'
+  gem 'html2haml'
+  gem 'hpricot'
+  gem 'ruby_parser', '~> 3.1.1'
 end
 
 group :production do

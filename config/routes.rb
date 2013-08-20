@@ -1,6 +1,7 @@
 Fund33::Application.routes.draw do
 
   resources :users
+  resources :applicants
 
   root to: 'static_pages#home'
 

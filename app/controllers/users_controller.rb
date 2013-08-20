@@ -25,11 +25,6 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
-    end
   end
 
   # GET /users/1/edit
@@ -41,9 +36,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    UserMailer.registration_confirmation(@user).deliver
-    flash[:success] = "Thank you! We will send you an invite when the crowdfunding campaign kicks off."
-    redirect_to root_url
+    if @user.save
+      UserMailer.registration_confirmation(@user).deliver
+      flash[:success] = "Thank you! We will send you an invite when the crowdfunding campaign kicks off."
+      redirect_to root_url
+    else
+      flash[:error] = @user.errors.full_messages.to_sentence
+      redirect_to root_url
+    end
 
 #    respond_to do |format|
 #      if @user.save
