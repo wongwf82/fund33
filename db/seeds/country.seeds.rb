@@ -1,6 +1,6 @@
 # encoding: utf-8
 Country.delete_all
-#Country.connection.execute("ALTER TABLE countries AUTO_INCREMENT = 1")
+Country.connection.execute("ALTER SEQUENCE countries_id_seq RESTART WITH 1")
 Country.create(:id=>1,:iso=>"AD",:name=>"Andorra")
 Country.create(:id=>2,:iso=>"AE",:name=>"United Arab Emirates")
 Country.create(:id=>3,:iso=>"AF",:name=>"Afghanistan")

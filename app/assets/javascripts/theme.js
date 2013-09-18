@@ -54,8 +54,6 @@ $(document).ready(function() {
 		$('.sign-up-form input[type="email"]').stop().css("background-color", "#cbeefa");
 	})
 	
-	
-	
 	/* Lock Form in Scroll */
 	$('.down-tab, .reasons-wrap .theme-blurb h3 span').waypoint(function(event, direction) {
 

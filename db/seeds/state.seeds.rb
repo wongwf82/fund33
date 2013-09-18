@@ -1,5 +1,6 @@
+# encoding: utf-8
 State.delete_all
-#State.connection.execute("ALTER TABLE states AUTO_INCREMENT=1")
+State.connection.execute("ALTER SEQUENCE states_id_seq RESTART WITH 1")
 State.create(:id=>1,:iso=>"06",:name=>"Parroquia de Sant JuliÃ  de Loria",:country_id=>1)
 State.create(:id=>2,:iso=>"05",:name=>"Parroquia d'Ordino",:country_id=>1)
 State.create(:id=>3,:iso=>"04",:name=>"Parroquia de la Massana",:country_id=>1)
