@@ -37,9 +37,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      UserMailer.registration_confirmation(@user).deliver
-      flash[:success] = "Thank you! We will send you an invite when the crowdfunding campaign kicks off."
-      redirect_to root_url
+#      UserMailer.registration_confirmation(@user).deliver
+#      flash[:success] = "Thank you! We will send you an invite when the crowdfunding campaign kicks off."
+      redirect_to edit_user_path(@user)
     else
       flash[:error] = @user.errors.full_messages.to_sentence
       redirect_to root_url
@@ -58,18 +58,27 @@ class UsersController < ApplicationController
 
   # PUT /users/1
   # PUT /users/1.json
-  def update
+  def submit_entry
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    @user.updating_user = true
+    if @user.update_attributes(params[:user])
+      UserMailer.user_entry(@user).deliver
+      flash[:success] = "Thank you! We will review your application as soon as we can."
+      redirect_to root_url
+    else
+      flash[:error] = @user.errors.full_messages.to_sentence
+      render 'edit'
     end
+
+#    respond_to do |format|
+#      if @user.update_attributes(params[:user])
+#        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+#        format.json { head :no_content }
+#      else
+#        format.html { render action: "edit" }
+#        format.json { render json: @user.errors, status: :unprocessable_entity }
+#      end
+#    end
   end
 
   # DELETE /users/1

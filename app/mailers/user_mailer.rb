@@ -9,9 +9,14 @@ class UserMailer < ActionMailer::Base
 
   def applicant_resume(applicant)
   	@applicant = applicant
-  	@applicant.save
     attachments[@applicant.cv_file_name] = File.read('public/system/attachments/' << @applicant.cv_file_name)
   	mail(:subject => 'Job Application from Fund33.com')  
+  end
+
+  def user_entry(user)
+    @user = user
+    attachments[@user.deck_file_name] = File.read('public/system/attachments/' << @user.deck_file_name)
+    mail(:subject => 'Crowdfund entry from Fund33.com')  
   end
 
 end

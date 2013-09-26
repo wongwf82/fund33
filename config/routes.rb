@@ -7,6 +7,7 @@ Fund33::Application.routes.draw do
 
   match '/home', to: 'static_pages#home'
   match '/help', to: 'static_pages#help'
+  match '/submit_entry/:id', to: 'users#submit_entry', :as => 'submit_entry'
 
 
   # The priority is based upon order of creation:

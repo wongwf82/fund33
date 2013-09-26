@@ -34,6 +34,14 @@ $(document).ready(function() {
 	$('.applicant-form #email').watermark();
 	$('.applicant-form #position').watermark();
 
+	$('.apply-form #first-name').watermark();
+	$('.apply-form #last-name').watermark();
+	$('.apply-form #city').watermark();
+	$('.apply-form #phone').watermark();
+	$('.apply-form #email').watermark();
+	$('.apply-form #company-name').watermark();
+	$('.apply-form #website-url').watermark();
+
 	//Form Validation
 	$(".theme-form").each(function() {
 		$(this).validate();

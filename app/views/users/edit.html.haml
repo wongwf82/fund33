@@ -1,0 +1,59 @@
+.full-width-features.feature-1
+  .container.contact-form.apply-form
+    .row
+      .span12
+        %br/
+        %br/
+        %h1 
+          = "Application for Fund33"
+        %br/
+        %br/
+        = form_for @user, :url => { :action => :submit_entry }, :html => {:class => "theme-form", :multipart => true } do | f |
+          .row
+            .span3
+              = f.text_field :first_name, :id => "first-name", :title => "First name"
+            .span3
+              = f.text_field :last_name, :id => "last-name", :title => "Last name"
+            .span3
+              = f.text_field :city, :id => "city", :title => "City"
+            .span3
+              %h2{:style => "text-align: left;"}
+                = country_code_select(:applicant, :country,
+                          priority_countries=['US','GB'],
+                          {:include_blank=>true},
+                          {:style=>'color: #7f7f7f; font-size: 17px; font-family: "PT Sans", Helvetica, Arial, sans-serif;'})
+          .row
+            .span3
+              = f.text_field :phone, :id => "phone", :title => "Phone"
+            .span3
+              = f.text_field :email, :id => "email", :title => "Email"
+            .span3
+              = f.text_field :company_name, :id => "company-name", :title => "Company name"
+            .span3
+              = f.text_field :website_url, :id => "website-url", :title => "Website URL"
+          %hr/
+          .row
+            .span12{:style => "text-align: left;"}
+              %br/
+              = "Describe your idea in one sentence or phrase."
+              = f.text_area :question1, :style => "margin-top: 10px; margin-bottom: 20px; height: 40px;"
+              = "How many people are there in the team?"
+              %br/
+              = f.text_field :question2, :style => "margin-top: 10px; margin-bottom: 20px;"
+              %br/
+              = "Who are each of the founders and what are their roles in the company?"
+              = f.text_area :question3, :style => "margin-top: 10px; margin-bottom: 20px; height: 40px;"
+              = "What have each of the founders accomplished?"
+              = f.text_area :question4, :style => "margin-top: 10px; margin-bottom: 20px; height: 40px;"
+              = "Please describe your idea in detail. What is different/interesting/new about your idea?"
+              = f.text_area :question5, :style => "margin-top: 10px; margin-bottom: 20px; height: 40px;"
+              = "Who are your key competitors and what differentiates you?"
+              = f.text_area :question6, :style => "margin-top: 10px; margin-bottom: 20px; height: 40px;"
+              = "How are you going to make money?"
+              = f.text_area :question7, :style => "margin-top: 10px; margin-bottom: 20px; height: 40px;"
+              = "Have you raised any funds?  If yes, who has invested in your company?"
+              = f.text_area :question8, :style => "margin-top: 10px; margin-bottom: 20px; height: 40px;"
+              %br/
+              %h2{:style => "text-align: left;"}
+                Please upload a business deck/presentation: #{f.file_field :deck}
+          \#{f.submit "SUBMIT!", :class => 'action-button'}

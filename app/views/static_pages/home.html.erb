@@ -11,17 +11,17 @@
 						<h1>The crowdfunded product accelerator</h1>
 						<h4>Build your idea through a single pledge</h4>
 						<%= form_for @user, :html => {:class => "theme-form sign-up-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
-						<% if @user.errors.any? %>
-						<div id="error_explanation">
-							<ul>
-								<% @user.errors.full_messages.each do |msg| %>
-								<li>* <%= msg %></li>
-								<% end %>
-							</ul>
-						</div>
-						<% end %>
-						<%= f.text_field :email, :id => 'user-email', :placeholder => 'Enter email here' %>
-						<%= f.submit "APPLY!"%>    
+  						<% if @user.errors.any? %>
+    						<div id="error_explanation">
+    							<ul>
+    								<% @user.errors.full_messages.each do |msg| %>
+    								  <li>* <%= msg %></li>
+    								<% end %>
+    							</ul>
+    						</div>
+  						<% end %>
+  						<%= f.text_field :email, :id => 'user-email', :placeholder => 'Enter email here' %>
+  						<%= f.submit "APPLY!"%>    
 						<% end %>						
 					</div>
 

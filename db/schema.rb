@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130820090932) do
+ActiveRecord::Schema.define(:version => 20130926183637) do
 
   create_table "applicants", :force => true do |t|
     t.string   "resume"
@@ -37,6 +37,23 @@ ActiveRecord::Schema.define(:version => 20130820090932) do
     t.string   "name"
   end
 
+  create_table "entries", :force => true do |t|
+    t.string   "question1"
+    t.string   "question2"
+    t.string   "question3"
+    t.string   "question4"
+    t.string   "question5"
+    t.string   "question6"
+    t.string   "question7"
+    t.string   "question8"
+    t.string   "question9"
+    t.string   "question10"
+    t.string   "question11"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
   create_table "states", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -48,11 +65,32 @@ ActiveRecord::Schema.define(:version => 20130820090932) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "phone"
     t.string   "company"
     t.string   "comments"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "country"
+    t.string   "question1"
+    t.string   "question2"
+    t.string   "question3"
+    t.string   "question4"
+    t.string   "question5"
+    t.string   "question6"
+    t.string   "question7"
+    t.string   "question8"
+    t.string   "question9"
+    t.string   "question10"
+    t.string   "question11"
+    t.string   "company_name"
+    t.string   "website_url"
+    t.string   "deck_file_name"
+    t.string   "deck_content_type"
+    t.integer  "deck_file_size"
+    t.datetime "deck_updated_at"
   end
 
 end

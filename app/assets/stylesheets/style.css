@@ -586,6 +586,9 @@ ul.tickList li {
 .applicant-form{
 	display:inherit;
 }
+.apply-form{
+	display:inherit;
+}
 .job-form{
 	display:none;
 }
