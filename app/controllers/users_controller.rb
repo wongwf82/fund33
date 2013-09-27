@@ -63,7 +63,8 @@ class UsersController < ApplicationController
     @user.updating_user = true
     if @user.update_attributes(params[:user])
       UserMailer.user_entry(@user).deliver
-      flash[:success] = "Thank you! We will review your application as soon as we can."
+      flash[:success] = "Thank you for applying! We will be reaching out to your shortly for final application steps and requirements. 
+                         You can reach us at support@fund33.com for any questions."
       redirect_to root_url
     else
       flash[:error] = @user.errors.full_messages.to_sentence
