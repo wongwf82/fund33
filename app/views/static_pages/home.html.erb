@@ -239,31 +239,31 @@
 			</div>
 
 			<%= form_for @user, :html => {:class => "theme-form"}, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
-			<% if @user.errors.any? %>
-			<div id="error_explanation">
-				<ul>
-					<% @user.errors.full_messages.each do |msg| %>
-					<li>* <%= msg %></li>
-					<% end %>
-				</ul>
-			</div>
-			<% end %>
-			<div class="span3">
-				<%= f.text_field :name, :id => "name-field", :title => "Name" %>
-			</div>	
-			<div class="span3">
-				<%= f.text_field :email, :id => "email-field", :title => "Email" %>
-			</div>	
-			<div class="span3">
-				<%= f.text_field :phone, :id => "phone-field", :title => "Phone" %>
-			</div>	
-			<div class="span3">
-				<%= f.text_field :company, :id => "company-field", :title => "Company" %>
-			</div>	
-			<div class="span12  comments-textarea">
-				<%= f.text_area :comments, :id => "comments-field", :title => "" %>
-			</div>	
-			<%= f.submit "SUBMIT!"%> 
+  			<% if @user.errors.any? %>
+    			<div id="error_explanation">
+    				<ul>
+    					<% @user.errors.full_messages.each do |msg| %>
+    				  	<li>* <%= msg %></li>
+    					<% end %>
+    				</ul>
+  			</div>
+  			<% end %>
+  			<div class="span3">
+  				<%= f.text_field :name, :id => "name-field", :title => "Name" %>
+  			</div>	
+  			<div class="span3">
+  				<%= f.text_field :email, :id => "email-field", :title => "Email" %>
+  			</div>	
+  			<div class="span3">
+  				<%= f.text_field :phone, :id => "phone-field", :title => "Phone" %>
+  			</div>	
+  			<div class="span3">
+  				<%= f.text_field :company, :id => "company-field", :title => "Company" %>
+  			</div>	
+  			<div class="span12  comments-textarea">
+  				<%= f.text_area :comments, :id => "comments-field", :title => "" %>
+  			</div>	
+  			<%= f.submit "SUBMIT!"%> 
 			<% end %> 
 		</div>
 	</div>
